@@ -127,7 +127,7 @@ Mensagem: ${formData.message}`;
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Área de Atendimento</div>
-                  <div className="text-gray-600">Rio de Janeiro e Região Metropolitana</div>
+                  <div className="text-gray-600">Região Metropolitana</div>
                 </div>
               </div>
 

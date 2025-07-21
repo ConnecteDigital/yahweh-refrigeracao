@@ -24,7 +24,7 @@ const Hero = () => {
             
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Assistência técnica especializada em geladeiras, máquinas de lavar e ar condicionado. 
-              Atendimento domiciliar em todo o Rio de Janeiro com qualidade e agilidade!
+              Atendimento domiciliar com qualidade e agilidade!
             </p>
 
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">

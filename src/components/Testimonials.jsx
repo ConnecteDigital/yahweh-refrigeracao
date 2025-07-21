@@ -31,35 +31,35 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Maria Silva",
-      location: "Copacabana, RJ",
+      location: "Copacabana",
       rating: 5,
       text: "Excelente serviço! Minha geladeira estava com problema no motor e o técnico chegou rápido e resolveu na hora. Super recomendo a Yahweh Refrigeração!",
       avatar: "MS"
     },
     {
       name: "João Santos",
-      location: "Tijuca, RJ",
+      location: "Tijuca",
       rating: 5,
       text: "Minha máquina de lavar parou de funcionar no final de semana, liguei para eles e no mesmo dia já estavam aqui. Serviço rápido e preço justo.",
       avatar: "JS"
     },
     {
       name: "Ana Costa",
-      location: "Barra da Tijuca, RJ",
+      location: "Barra da Tijuca",
       rating: 5,
       text: "Contratei o serviço para manutenção do meu ar condicionado. Excelente atendimento, profissional muito educado e que realmente entendia do assunto.",
       avatar: "AC"
     },
     {
       name: "Carlos Mendes",
-      location: "Niterói, RJ",
+      location: "Niterói",
       rating: 5,
       text: "Técnico muito competente! Explicou todo o problema da minha geladeira e fez o reparo com muita agilidade. Recomendo sem dúvidas!",
       avatar: "CM"
     },
     {
       name: "Fernanda Lima",
-      location: "Nova Iguaçu, RJ",
+      location: "Nova Iguaçu",
       rating: 5,
       text: "Atendimento excepcional! Além de resolver o problema da minha máquina de lavar, ainda me deram dicas de manutenção. Muito profissionais!",
       avatar: "FL"

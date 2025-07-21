@@ -21,7 +21,7 @@ const HomeService = () => {
     {
       icon: <MapPin className="w-8 h-8 text-blue-600" />,
       title: "Cobertura Total RJ",
-      description: "Atendemos toda a região metropolitana do Rio de Janeiro."
+      description: "Atendemos toda a região metropolitana."
     },
     {
       icon: <Shield className="w-8 h-8 text-blue-600" />,

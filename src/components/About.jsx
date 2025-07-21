@@ -60,7 +60,7 @@ const About = () => {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 A Yahweh Refrigeração nasceu da paixão pela refrigeração e do compromisso com a qualidade. 
                 Há mais de 10 anos, oferecemos serviços especializados em geladeiras, máquinas de lavar e 
-                ar condicionado, atendendo todo o estado do Rio de Janeiro com excelência e profissionalismo.
+                ar condicionado, atendendo com excelência e profissionalismo.
               </p>
               
               <p className="text-gray-600 mb-6 leading-relaxed">

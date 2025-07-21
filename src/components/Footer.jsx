@@ -27,7 +27,7 @@ const Footer = () => {
             <p className="text-gray-300 mb-6 leading-relaxed">
               A Yahweh Refrigeração é especializada em assistência técnica de geladeiras, 
               máquinas de lavar e ar condicionado. Oferecemos atendimento domiciliar 24 horas 
-              em todo o Rio de Janeiro com qualidade e agilidade.
+              em toda a região metropolitana com qualidade e agilidade.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -122,7 +122,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">Rio de Janeiro, RJ</span>
+                <span className="text-gray-300">Região Metropolitana</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-blue-400" />
