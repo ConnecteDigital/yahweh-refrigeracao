@@ -142,7 +142,6 @@
 
 /* Prevenir rolagem horizontal no mobile */
 html, body {
-  overflow-x: hidden;
   max-width: 100vw;
 }
 
