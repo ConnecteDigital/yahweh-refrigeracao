@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home, Clock, MapPin, Shield, MessageCircle } from 'lucide-react';
-import serviceImage from '../assets/tecnico2.jpg';
+import serviceImage from '../assets/tecnico1.jpeg';
 
 const HomeService = () => {
   const whatsappNumber = "5521984619958";
@@ -62,16 +62,6 @@ const HomeService = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="bg-blue-600 text-white p-6 rounded-xl mb-8">
-              <h3 className="text-xl font-semibold mb-2">Taxa de Visita</h3>
-              <p className="mb-4">
-                Cobramos apenas uma taxa simbólica de visita que é totalmente descontada 
-                caso você aprove o orçamento do serviço.
-              </p>
-              <div className="text-2xl font-bold">R$ 50,00*</div>
-              <div className="text-sm opacity-90">*Descontado do valor do serviço</div>
             </div>
 
             <a 
