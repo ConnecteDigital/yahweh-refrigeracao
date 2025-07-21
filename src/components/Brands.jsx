@@ -25,7 +25,8 @@ const Brands = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center">
+        {/* Desktop: Grid normal */}
+        <div className="hidden md:grid grid-cols-4 lg:grid-cols-8 gap-8 items-center">
           {brands.map((brand, index) => (
             <div 
               key={index} 
@@ -39,6 +40,44 @@ const Brands = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile: Carrossel animado */}
+        <div className="md:hidden overflow-hidden">
+          <div className="flex animate-scroll-brands">
+            {/* Primeira sequência */}
+            {brands.map((brand, index) => (
+              <div 
+                key={`first-${index}`}
+                className="flex-shrink-0 w-40 mx-2"
+              >
+                <div className="flex items-center justify-center p-4 bg-gray-50 rounded-xl">
+                  <div 
+                    className="text-lg font-bold text-center"
+                    style={{ color: brand.color }}
+                  >
+                    {brand.name}
+                  </div>
+                </div>
+              </div>
+            ))}
+            {/* Segunda sequência para loop contínuo */}
+            {brands.map((brand, index) => (
+              <div 
+                key={`second-${index}`}
+                className="flex-shrink-0 w-40 mx-2"
+              >
+                <div className="flex items-center justify-center p-4 bg-gray-50 rounded-xl">
+                  <div 
+                    className="text-lg font-bold text-center"
+                    style={{ color: brand.color }}
+                  >
+                    {brand.name}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 text-center">

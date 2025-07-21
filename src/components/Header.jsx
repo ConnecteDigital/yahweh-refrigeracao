@@ -23,7 +23,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="Yahweh Refrigeração" className="h-12 w-auto" />
+            <button 
+              onClick={() => scrollToSection('inicio')}
+              className="hover:opacity-80 transition-opacity"
+            >
+              <img src={logo} alt="Yahweh Refrigeração" className="h-12 w-auto" />
+            </button>
           </div>
 
           {/* Desktop Navigation */}

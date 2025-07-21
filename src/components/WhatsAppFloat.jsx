@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import whatsappIcon from '../assets/whatsapp_icon.png';
 
 const WhatsAppFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,7 +66,11 @@ const WhatsAppFloat = () => {
         className="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 animate-pulse"
         aria-label="Falar no WhatsApp"
       >
-        <MessageCircle size={24} />
+        <img 
+          src={whatsappIcon} 
+          alt="WhatsApp" 
+          className="w-6 h-6 filter brightness-0 invert"
+        />
         
         {/* Efeito de ondas */}
         <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></div>
