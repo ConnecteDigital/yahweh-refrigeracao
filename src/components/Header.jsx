@@ -27,7 +27,7 @@ const Header = () => {
               onClick={() => scrollToSection('inicio')}
               className="hover:opacity-80 transition-opacity"
             >
-              <img src={logo} alt="Yahweh Refrigeração" className="h-6 md:h-12 w-auto" />
+              <img src={logo} alt="Yahweh Refrigeração" className="h-4 md:h-12 w-auto" />
             </button>
           </div>
 
