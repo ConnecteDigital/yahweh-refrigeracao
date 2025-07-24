@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import BlogPost from './BlogPost';
 import geladeiraImg from '../assets/geladeira1.jpg';
-import maquinaLavarImg from '../assets/maquina_lavar_nova.png';
+import maquinaLavarImg from '../assets/maquina_lavar2.webp';
 import arCondicionadoImg from '../assets/ar_condicionado2.webp';
 
 const Blog = () => {

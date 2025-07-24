@@ -6,8 +6,6 @@ As máquinas de lavar são equipamentos complexos que podem apresentar diversos 
 
 ## 1. Máquina Não Liga
 
-![Máquinas de Lavar](/src/assets/maquina_lavar_nova_2.png)
-
 Este é um dos problemas mais básicos, mas que pode ter várias causas:
 
 **Possíveis causas:**
