@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import geladeiraImg from '../assets/geladeira2.jpg';
-import maquinaLavarImg from '../assets/maquina_lavar1.webp';
+import maquinaLavarImg from '../assets/maquina_lavar_nova_2.png';
 import arCondicionadoImg from '../assets/ar_condicionado1.jpg';
 
 const Services = () => {
@@ -13,9 +13,8 @@ const Services = () => {
     {
       image: geladeiraImg,
       title: "Reparo de Geladeiras",
-      description: "Diagnosticamos e consertamos todos os tipos de geladeiras com rapidez e eficiência.",
+      description: "Diagnosticamos e consertamos todos os tipos de geladeiras: frost free, inverter e side by side com rapidez e eficiência.",
       benefits: [
-        "Diagnóstico gratuito",
         "Peças originais",
         "Garantia de 90 dias",
         "Atendimento no mesmo dia"
