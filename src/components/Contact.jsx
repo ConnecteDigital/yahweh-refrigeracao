@@ -64,7 +64,7 @@ Mensagem: ${formData.message}`;
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Telefone</div>
-                  <a href="tel:21984619958" className="text-blue-600 hover:underline">
+                  <a href="tel:+5521984619958" className="text-blue-600 hover:underline">
                     (21) 98461-9958
                   </a>
                 </div>
