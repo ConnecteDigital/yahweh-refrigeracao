@@ -120,7 +120,7 @@ const Header = () => {
                 Contato
               </button>
               <a 
-                href="tel:21984619958" 
+                href="tel:+5521984619958" 
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors w-fit"
               >
                 <Phone size={18} />
