@@ -94,7 +94,7 @@ Mensagem: ${formData.message}`;
                   <div className="font-semibold text-gray-900">E-mail</div>
                   <a 
                     href={`mailto:${EMAIL}`} 
-                    className="text-red-600 hover:underline"
+                    className="text-red-600 hover:underline break-all"
                   >
                     {EMAIL}
                   </a>

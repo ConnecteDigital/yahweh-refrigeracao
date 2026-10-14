@@ -119,7 +119,7 @@ Os arquivos serão gerados na pasta `dist/`.
 ## 📞 Informações de Contato
 
 - **Telefone/WhatsApp:** (21) 96769-0097
-- **Email:** contato@yahwehrefrigeracoes.com.br
+- **Email:** yahwehrefrigeracao2010@gmail.com
 - **Instagram:** @yahweh_refrigeracao.rj
 - **Área de Atendimento:** Rio de Janeiro e Região Metropolitana
 

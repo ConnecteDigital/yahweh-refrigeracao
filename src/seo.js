@@ -3,7 +3,7 @@
 import { BUSINESS_NAME, EMAIL, INSTAGRAM_URL, PHONE_E164, SITE_URL } from './config/site.js';
 import { bairros, getBairro } from './data/bairros.js';
 import { getPost, posts } from './data/posts.jsx';
-import { bairroFaqs } from './pages/BairroPage.jsx';
+import { bairroFaqs } from './data/bairroFaqs.js';
 import logo from './assets/yahweh_refrigeracao_logo.png';
 import heroImage from './assets/geladeira1.jpg';
 
@@ -26,7 +26,8 @@ const business = {
     addressCountry: 'BR',
   },
   areaServed: [
-    { '@type': 'City', name: 'Rio de Janeiro' },
+    ...['Rio de Janeiro', 'Niterói', 'Duque de Caxias', 'São João de Meriti', 'Nova Iguaçu', 'Nilópolis',
+      'Mesquita', 'Belford Roxo', 'Itaboraí', 'Itaguaí', 'Maricá'].map((name) => ({ '@type': 'City', name })),
     { '@type': 'AdministrativeArea', name: 'Região Metropolitana do Rio de Janeiro' },
   ],
   openingHoursSpecification: {
@@ -116,7 +117,7 @@ export const getSeo = (path) => {
   if (bairro) {
     return {
       title: `Conserto de Geladeira, Máquina de Lavar e Ar em ${bairro.nome} | Yahweh`,
-      description: `Assistência técnica em ${bairro.nome}: conserto de geladeira, máquina de lavar e ar condicionado com atendimento domiciliar, peças originais e garantia de 90 dias.`,
+      description: `Assistência técnica em ${bairro.local}: conserto de geladeira, máquina de lavar e ar condicionado com atendimento domiciliar, peças originais e garantia de 90 dias.`,
       path,
       jsonLd: [
         {
@@ -127,7 +128,7 @@ export const getSeo = (path) => {
           provider: { '@id': `${SITE_URL}/#empresa`, '@type': 'HVACBusiness', name: BUSINESS_NAME, telephone: PHONE_E164 },
           areaServed: {
             '@type': 'Place',
-            name: `${bairro.nome}, ${bairro.cidade}`,
+            name: bairro.local,
           },
         },
         {
