@@ -145,15 +145,18 @@ const BairroPage = ({ bairro }) => {
       <section className="py-10 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {diferenciais.map(({ icon: Icon, titulo, texto }) => (
-              <div key={titulo} className="flex items-start space-x-3">
-                <Icon className="w-7 h-7 text-blue-600 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-gray-900">{titulo}</h3>
-                  <p className="text-sm text-gray-600">{texto}</p>
+            {diferenciais.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.titulo} className="flex items-start space-x-3">
+                  <Icon className="w-7 h-7 text-blue-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">{item.titulo}</h3>
+                    <p className="text-sm text-gray-600">{item.texto}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -228,18 +231,21 @@ const BairroPage = ({ bairro }) => {
             Como funciona o atendimento em {bairro.nome}
           </h2>
           <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {passos(bairro).map(({ icon: Icon, titulo, texto }, index) => (
-              <li key={titulo} className="bg-blue-50 rounded-2xl p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-                    {index + 1}
-                  </span>
-                  <Icon className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{titulo}</h3>
-                <p className="text-gray-600 text-sm">{texto}</p>
-              </li>
-            ))}
+            {passos(bairro).map((passo, index) => {
+              const Icon = passo.icon;
+              return (
+                <li key={passo.titulo} className="bg-blue-50 rounded-2xl p-6">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                      {index + 1}
+                    </span>
+                    <Icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{passo.titulo}</h3>
+                  <p className="text-gray-600 text-sm">{passo.texto}</p>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>
