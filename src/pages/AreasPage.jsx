@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { bairrosPorRegiao } from '../data/bairros';
+import { bairrosPorRegiao, slugify } from '../data/bairros';
 import { waLink } from '../config/site';
 
 const AreasPage = () => {
@@ -32,9 +32,9 @@ const AreasPage = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-5xl space-y-10">
           {regioes.map(([regiao, lista]) => (
-            <div key={regiao}>
+            <div key={regiao} id={slugify(regiao)} className="scroll-mt-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">{regiao}</h2>
-              <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {lista.map((bairro) => (
                   <li key={bairro.slug}>
                     <a href={`/assistencia-tecnica/${bairro.slug}`} className="text-blue-600 hover:underline">

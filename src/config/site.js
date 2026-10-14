@@ -7,7 +7,7 @@ export const PHONE_E164 = '+5521967690097';
 export const WHATSAPP_NUMBER = '5521967690097';
 export const PHONE_HREF = `tel:${PHONE_E164}`;
 
-export const EMAIL = 'contato@yahwehrefrigeracoes.com.br';
+export const EMAIL = 'yahwehrefrigeracao2010@gmail.com';
 export const INSTAGRAM_URL = 'https://www.instagram.com/yahweh_refrigeracao.rj/';
 
 export const waLink = (message) =>

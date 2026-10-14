@@ -7,6 +7,7 @@ import HomeService from '../components/HomeService';
 import Testimonials from '../components/Testimonials';
 import Blog from '../components/Blog';
 import Contact from '../components/Contact';
+import AreasHome from '../components/AreasHome';
 
 const HomePage = () => (
   <main>
@@ -16,6 +17,7 @@ const HomePage = () => (
     <Brands />
     <HomeService />
     <Testimonials />
+    <AreasHome />
     <Blog />
     <Contact />
   </main>
