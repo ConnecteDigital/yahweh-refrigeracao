@@ -5,7 +5,9 @@ import { bairros, getBairro } from './data/bairros.js';
 import { getPost, posts } from './data/posts.jsx';
 import { bairroFaqs } from './data/bairroFaqs.js';
 import logo from './assets/yahweh_refrigeracao_logo.png';
-import heroImage from './assets/geladeira1.jpg';
+import { fotos } from './data/fotos.js';
+
+const heroImage = fotos.abrindoGeladeira.src;
 
 const absolute = (path) => (path.startsWith('http') ? path : `${SITE_URL}${path}`);
 
@@ -92,7 +94,7 @@ export const getSeo = (path) => {
       title: `${post.title} | Yahweh Refrigeração`,
       description: post.excerpt,
       path,
-      image: post.image,
+      image: post.foto?.src,
       type: 'article',
       jsonLd: [
         {
@@ -101,7 +103,7 @@ export const getSeo = (path) => {
           headline: post.title,
           description: post.excerpt,
           datePublished: post.isoDate,
-          image: absolute(post.image),
+          image: absolute(post.foto?.src || heroImage),
           inLanguage: 'pt-BR',
           mainEntityOfPage: absolute(path),
           author: { '@id': `${SITE_URL}/#empresa` },
@@ -159,7 +161,8 @@ const escape = (text) =>
 
 export const renderHead = (seo) => {
   const url = absolute(seo.path);
-  const image = absolute(seo.image || heroImage);
+  // JPG fixo para a prévia de links (WhatsApp/Facebook não exibem WebP de forma confiável).
+  const image = absolute(seo.image && !seo.image.endsWith('.webp') ? seo.image : '/og-image.jpg');
   const tags = [
     `<title>${escape(seo.title)}</title>`,
     `<meta name="description" content="${escape(seo.description)}" />`,

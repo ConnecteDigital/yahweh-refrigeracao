@@ -1,6 +1,4 @@
-import geladeiraImg from '../assets/geladeira1.jpg';
-import maquinaLavarImg from '../assets/maquina_lavar2.webp';
-import arCondicionadoImg from '../assets/ar_condicionado2.webp';
+import { fotos } from './fotos';
 
 export const posts = [
   {
@@ -11,7 +9,7 @@ export const posts = [
     isoDate: "2024-01-15",
     readTime: "5 min de leitura",
     category: "Manutenção",
-    image: geladeiraImg,
+    foto: fotos.diagnosticoGeladeira,
     slug: "dicas-manutencao-geladeira",
     content: (
       <div>
@@ -42,7 +40,7 @@ export const posts = [
     isoDate: "2024-01-08",
     readTime: "7 min de leitura",
     category: "Diagnóstico",
-    image: maquinaLavarImg,
+    foto: fotos.maquinaDeLavar,
     slug: "problemas-maquina-lavar",
     content: (
       <div>
@@ -75,7 +73,6 @@ export const posts = [
     isoDate: "2024-01-02",
     readTime: "6 min de leitura",
     category: "Economia",
-    image: arCondicionadoImg,
     slug: "economizar-energia-ar-condicionado",
     content: (
       <div>

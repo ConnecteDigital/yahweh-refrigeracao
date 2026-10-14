@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { posts } from '../data/posts';
+import IlustracaoAr from './IlustracaoAr';
 import { PHONE_HREF, waLink } from '../config/site';
 
 const Blog = () => {
@@ -25,13 +26,18 @@ const Blog = () => {
             <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl">
               <a href={`/blog/${post.slug}`} className="block">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
+                {post.foto ? (
+                  <img 
+                    src={post.foto.src} 
+                    alt={post.foto.alt}
+                    style={{ objectPosition: post.foto.posicao }}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <IlustracaoAr className="h-full" />
+                )}
               </div>
               
               <div className="p-6">

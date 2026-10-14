@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageCircle, Phone, Clock } from 'lucide-react';
-import heroImage from '../assets/geladeira1.jpg';
+import { fotos } from '../data/fotos';
 import { PHONE_HREF, waLink } from '../config/site';
 
 const Hero = () => {
@@ -67,9 +67,13 @@ const Hero = () => {
           <div className="lg:w-1/2 lg:pl-12">
             <div className="relative">
               <img 
-                src={heroImage} 
-                alt="Técnico consertando geladeira" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                src={fotos.abrindoGeladeira.src}
+                alt={fotos.abrindoGeladeira.alt}
+                style={{ objectPosition: fotos.abrindoGeladeira.posicao }}
+                width="900"
+                height="1200"
+                fetchpriority="high"
+                className="rounded-2xl shadow-2xl w-full aspect-[4/3] lg:aspect-[4/5] object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-3">

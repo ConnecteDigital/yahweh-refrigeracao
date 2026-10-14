@@ -1,4 +1,5 @@
 import React from 'react';
+import IlustracaoAr from './IlustracaoAr';
 import { ArrowLeft, Calendar, Clock, MessageCircle, Phone } from 'lucide-react';
 import { PHONE_HREF, waLink } from '../config/site';
 
@@ -22,11 +23,16 @@ const BlogPost = ({ post }) => {
 
         {/* Cabeçalho do Post */}
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-64 object-cover"
-          />
+          {post.foto ? (
+            <img
+              src={post.foto.src}
+              alt={post.foto.alt}
+              style={{ objectPosition: post.foto.posicao }}
+              className="w-full h-64 object-cover"
+            />
+          ) : (
+            <IlustracaoAr className="h-64" />
+          )}
           
           <div className="p-8">
             <div className="flex flex-wrap items-center gap-4 mb-4">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home, Clock, MapPin, Shield, MessageCircle } from 'lucide-react';
-import serviceImage from '../assets/tecnico1.jpeg';
+import { fotos } from '../data/fotos';
 import { waLink } from '../config/site';
 
 const HomeService = () => {
@@ -79,9 +79,14 @@ const HomeService = () => {
           <div className="lg:w-1/2">
             <div className="relative">
               <img 
-                src={serviceImage} 
-                alt="Técnico realizando atendimento domiciliar" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                src={fotos.diagnosticoGeladeira.src}
+                alt={fotos.diagnosticoGeladeira.alt}
+                style={{ objectPosition: fotos.diagnosticoGeladeira.posicao }}
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                className="rounded-2xl shadow-2xl w-full aspect-[4/3] lg:aspect-[4/5] object-cover"
               />
               <div className="absolute -top-6 -left-6 bg-green-500 text-white p-4 rounded-xl shadow-lg">
                 <div className="text-center">
