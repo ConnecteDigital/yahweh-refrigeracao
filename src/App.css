@@ -124,11 +124,12 @@ section[id] {
   scroll-margin-top: 80px;
 }
 
-/* Prevenir rolagem horizontal no mobile */
+/* Prevenir rolagem horizontal no mobile. "clip" (e não "hidden") para não
+   transformar os elementos em áreas roláveis próprias: com "hidden", arrastar
+   o dedo rolava o conteúdo dentro da seção em vez da página. */
 html, body {
   max-width: 100vw;
-  overflow-x: hidden;
-  overflow-y: auto; /* Garante que a rolagem vertical esteja sempre habilitada */
+  overflow-x: clip;
 }
 
 * {
@@ -138,12 +139,12 @@ html, body {
 /* Garantir que nenhum elemento ultrapasse a largura da tela */
 .container {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Correção específica para elementos que podem causar overflow */
 section {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Garantir que imagens não ultrapassem o container (em @layer base para que
