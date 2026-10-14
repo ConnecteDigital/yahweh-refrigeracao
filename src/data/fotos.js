@@ -1,0 +1,30 @@
+// Fotos reais da Yahweh Refrigeração (src/assets/fotos), já em WebP.
+// "posicao" é o enquadramento usado quando a foto (em pé) é recortada
+// num card deitado: mantém o técnico e o aparelho visíveis.
+import abrindoGeladeira from '../assets/fotos/tecnico-abrindo-geladeira-inox.webp';
+import diagnosticoGeladeira from '../assets/fotos/tecnico-diagnostico-geladeira-multimetro.webp';
+import maquinaDeLavar from '../assets/fotos/tecnico-conserto-maquina-de-lavar.webp';
+import atendimentoCliente from '../assets/fotos/tecnico-atendimento-cliente-geladeira.webp';
+
+export const fotos = {
+  abrindoGeladeira: {
+    src: abrindoGeladeira,
+    alt: 'Técnico da Yahweh Refrigeração verificando geladeira inox de duas portas na casa do cliente',
+    posicao: '50% 72%',
+  },
+  diagnosticoGeladeira: {
+    src: diagnosticoGeladeira,
+    alt: 'Técnico da Yahweh Refrigeração medindo com multímetro o freezer de uma geladeira',
+    posicao: '50% 45%',
+  },
+  maquinaDeLavar: {
+    src: maquinaDeLavar,
+    alt: 'Técnico da Yahweh Refrigeração consertando máquina de lavar Electrolux',
+    posicao: '50% 55%',
+  },
+  atendimentoCliente: {
+    src: atendimentoCliente,
+    alt: 'Técnico da Yahweh Refrigeração atendendo cliente e testando o painel da geladeira',
+    posicao: '50% 62%',
+  },
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, Users, Clock, Shield } from 'lucide-react';
-import aboutImage from '../assets/tecnico1.jpeg';
+import { fotos } from '../data/fotos';
 
 const About = () => {
   const stats = [
@@ -34,9 +34,14 @@ const About = () => {
           <div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
             <div className="relative">
               <img 
-                src={aboutImage} 
-                alt="Técnico especializado da Yahweh Refrigeração" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                src={fotos.atendimentoCliente.src}
+                alt={fotos.atendimentoCliente.alt}
+                style={{ objectPosition: fotos.atendimentoCliente.posicao }}
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                className="rounded-2xl shadow-2xl w-full aspect-[4/3] lg:aspect-[4/5] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-xl shadow-lg">
                 <div className="text-center">

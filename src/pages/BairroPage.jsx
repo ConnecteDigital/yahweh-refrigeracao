@@ -6,9 +6,8 @@ import { bairrosVizinhos } from '../data/bairros';
 import { bairroFaqs } from '../data/bairroFaqs';
 import { PHONE_DISPLAY, PHONE_HREF, waLink } from '../config/site';
 import SectionHeading from '../components/SectionHeading';
-import geladeiraImg from '../assets/geladeira2.jpg';
-import maquinaLavarImg from '../assets/maquina_lavar_nova_2.png';
-import arCondicionadoImg from '../assets/ar_condicionado1.jpg';
+import IlustracaoAr from '../components/IlustracaoAr';
+import { fotos } from '../data/fotos';
 
 // Escolhe sempre a mesma variação de texto para o mesmo bairro, para que
 // as páginas não fiquem idênticas entre si.
@@ -43,19 +42,18 @@ const garantias = ['Atendimento em casa', 'Garantia de 90 dias', 'Peças origina
 
 const servicos = (b) => [
   {
-    image: geladeiraImg,
+    foto: fotos.diagnosticoGeladeira,
     title: `Conserto de geladeira em ${b.nome}`,
     text: 'Frost free, duplex, inverter e side by side.',
     itens: ['Troca de termostato e sensores', 'Recarga de gás', 'Troca de borracha de vedação', 'Reparo de placa eletrônica'],
   },
   {
-    image: maquinaLavarImg,
+    foto: fotos.maquinaDeLavar,
     title: `Conserto de máquina de lavar em ${b.nome}`,
     text: 'Lavadoras e lava e seca de todas as marcas.',
     itens: ['Troca de bomba de drenagem', 'Reparo de motor e câmbio', 'Troca de válvula de entrada', 'Ajuste de suspensão'],
   },
   {
-    image: arCondicionadoImg,
     title: `Ar condicionado em ${b.nome}`,
     text: 'Split, inverter e janela.',
     itens: ['Instalação profissional', 'Higienização completa', 'Recarga de gás', 'Manutenção preventiva'],
@@ -160,13 +158,18 @@ const BairroPage = ({ bairro }) => {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {servicos(bairro).map((servico) => (
               <article key={servico.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-                <img
-                  src={servico.image}
-                  alt={servico.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-44 w-full object-cover"
-                />
+                {servico.foto ? (
+                  <img
+                    src={servico.foto.src}
+                    alt={servico.foto.alt}
+                    style={{ objectPosition: servico.foto.posicao }}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-44 w-full object-cover"
+                  />
+                ) : (
+                  <IlustracaoAr className="h-44" />
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold leading-snug text-ink">{servico.title}</h3>
                   <p className="mt-1 text-slate-600">{servico.text}</p>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
-import geladeiraImg from '../assets/geladeira2.jpg';
-import maquinaLavarImg from '../assets/maquina_lavar_nova_2.png';
-import arCondicionadoImg from '../assets/ar_condicionado1.jpg';
+import { fotos } from '../data/fotos';
+import IlustracaoAr from './IlustracaoAr';
 import { waLink } from '../config/site';
 
 const Services = () => {
@@ -11,7 +10,7 @@ const Services = () => {
 
   const services = [
     {
-      image: geladeiraImg,
+      foto: fotos.diagnosticoGeladeira,
       title: "Reparo de Geladeiras",
       description: "Diagnosticamos e consertamos todos os tipos de geladeiras: frost free, inverter e side by side com rapidez e eficiência.",
       benefits: [
@@ -21,7 +20,7 @@ const Services = () => {
       ]
     },
     {
-      image: maquinaLavarImg,
+      foto: fotos.maquinaDeLavar,
       title: "Máquinas de Lavar",
       description: "Especialistas em manutenção e reparo de máquinas de lavar de todas as marcas.",
       benefits: [
@@ -32,7 +31,6 @@ const Services = () => {
       ]
     },
     {
-      image: arCondicionadoImg,
       title: "Ar Condicionado",
       description: "Instalação, manutenção e reparo de ar condicionado split e janela.",
       benefits: [
@@ -60,11 +58,18 @@ const Services = () => {
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
+                {service.foto ? (
+                  <img 
+                    src={service.foto.src} 
+                    alt={service.foto.alt}
+                    style={{ objectPosition: service.foto.posicao }}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <IlustracaoAr className="h-full" />
+                )}
               </div>
               
               <div className="p-6">
