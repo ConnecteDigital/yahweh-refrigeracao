@@ -1,29 +1,38 @@
 import React from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Brands from './components/Brands';
-import HomeService from './components/HomeService';
-import Testimonials from './components/Testimonials';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import BlogPost from './components/BlogPost';
+import HomePage from './pages/HomePage';
+import AreasPage from './pages/AreasPage';
+import BairroPage from './pages/BairroPage';
+import NotFoundPage from './pages/NotFoundPage';
+import { getPost } from './data/posts';
+import { getBairro } from './data/bairros';
 import './App.css';
+
+const BlogPostRoute = () => {
+  const post = getPost(useParams().slug);
+  return post ? <BlogPost post={post} /> : <NotFoundPage />;
+};
+
+const BairroRoute = () => {
+  const bairro = getBairro(useParams().slug);
+  return bairro ? <BairroPage bairro={bairro} /> : <NotFoundPage />;
+};
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Hero />
-      <Services />
-      <About />
-      <Brands />
-      <HomeService />
-      <Testimonials />
-      <Blog />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog/:slug" element={<BlogPostRoute />} />
+        <Route path="/areas-atendidas" element={<AreasPage />} />
+        <Route path="/assistencia-tecnica/:slug" element={<BairroRoute />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
       <Footer />
       <WhatsAppFloat />
     </div>
@@ -31,4 +40,3 @@ function App() {
 }
 
 export default App;
-

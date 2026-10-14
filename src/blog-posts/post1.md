@@ -49,5 +49,5 @@ Se você notar qualquer problema com sua geladeira, não hesite em entrar em con
 
 ---
 
-*Precisa de assistência técnica para sua geladeira? Entre em contato conosco pelo WhatsApp (21) 98461-9958 ou visite nosso site para mais informações.*
+*Precisa de assistência técnica para sua geladeira? Entre em contato conosco pelo WhatsApp (21) 96769-0097 ou visite nosso site para mais informações.*
 

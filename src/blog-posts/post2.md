@@ -143,5 +143,5 @@ A Yahweh Refrigeração conta com técnicos especializados em todas as marcas de
 
 ---
 
-*Sua máquina de lavar apresentou algum desses problemas? Entre em contato conosco pelo WhatsApp (21) 98461-9958. Atendemos 24 horas em toda a região metropolitana!*
+*Sua máquina de lavar apresentou algum desses problemas? Entre em contato conosco pelo WhatsApp (21) 96769-0097. Atendemos 24 horas em toda a região metropolitana!*
 

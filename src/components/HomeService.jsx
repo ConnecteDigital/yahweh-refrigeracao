@@ -1,11 +1,11 @@
 import React from 'react';
 import { Home, Clock, MapPin, Shield, MessageCircle } from 'lucide-react';
 import serviceImage from '../assets/tecnico1.jpeg';
+import { waLink } from '../config/site';
 
 const HomeService = () => {
-  const whatsappNumber = "5521984619958";
   const whatsappMessage = "Olá! Gostaria de agendar um atendimento domiciliar.";
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = waLink(whatsappMessage);
 
   const features = [
     {
@@ -68,7 +68,7 @@ const HomeService = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 text-white px-8 py-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-green-600 transition-colors font-semibold text-lg w-full md:w-auto"
+              className="bg-green-500 text-white px-8 py-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-green-600 font-semibold text-lg w-full md:w-auto"
             >
               <MessageCircle size={20} />
               <span>Agendar Visita</span>

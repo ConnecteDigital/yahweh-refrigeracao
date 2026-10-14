@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { EMAIL, INSTAGRAM_URL, PHONE_DISPLAY, PHONE_HREF, waLink } from '../config/site';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,8 +11,6 @@ const Contact = () => {
     message: ''
   });
 
-  const whatsappNumber = "5521984619958";
-  const instagramUrl = "https://www.instagram.com/yahweh_refrigeracao.rj/";
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,12 +30,12 @@ Serviço: ${formData.service}
 
 Mensagem: ${formData.message}`;
 
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+    const whatsappUrl = waLink(message);
     window.open(whatsappUrl, '_blank');
   };
 
   const quickWhatsappMessage = "Olá! Gostaria de solicitar um orçamento.";
-  const quickWhatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(quickWhatsappMessage)}`;
+  const quickWhatsappUrl = waLink(quickWhatsappMessage);
 
   return (
     <section id="contato" className="py-16 bg-gray-50">
@@ -64,8 +63,8 @@ Mensagem: ${formData.message}`;
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Telefone</div>
-                  <a href="tel:+5521984619958" className="text-blue-600 hover:underline">
-                    (21) 98461-9958
+                  <a href={PHONE_HREF} className="text-blue-600 hover:underline">
+                    {PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
@@ -82,7 +81,7 @@ Mensagem: ${formData.message}`;
                     rel="noopener noreferrer"
                     className="text-green-600 hover:underline"
                   >
-                    (21) 98461-9958
+                    {PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
@@ -94,10 +93,10 @@ Mensagem: ${formData.message}`;
                 <div>
                   <div className="font-semibold text-gray-900">E-mail</div>
                   <a 
-                    href="mailto:contato@yahwehrefrigeracoes.com.br" 
+                    href={`mailto:${EMAIL}`} 
                     className="text-red-600 hover:underline"
                   >
-                    contato@yahwehrefrigeracoes.com.br
+                    {EMAIL}
                   </a>
                 </div>
               </div>
@@ -111,7 +110,7 @@ Mensagem: ${formData.message}`;
                 <div>
                   <div className="font-semibold text-gray-900">Instagram</div>
                   <a 
-                    href={instagramUrl}
+                    href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-purple-600 hover:underline"
@@ -151,7 +150,7 @@ Mensagem: ${formData.message}`;
                 href={quickWhatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
+                className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 inline-block"
               >
                 Chamar Agora
               </a>
@@ -251,7 +250,7 @@ Mensagem: ${formData.message}`;
 
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white py-4 px-6 rounded-lg font-semibold hover:bg-green-600 transition-colors flex items-center justify-center space-x-2"
+                className="w-full bg-green-500 text-white py-4 px-6 rounded-lg font-semibold hover:bg-green-600 flex items-center justify-center space-x-2"
               >
                 <Send className="w-5 h-5" />
                 <span>Enviar via WhatsApp</span>

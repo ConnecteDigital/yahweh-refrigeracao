@@ -129,7 +129,7 @@ const Testimonials = () => {
             <div className="flex items-center justify-between">
               <button
                 onClick={prevTestimonial}
-                className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+                className="p-2 rounded-full bg-white shadow-md hover:shadow-lg"
               >
                 <ChevronLeft className="w-6 h-6 text-gray-600" />
               </button>
@@ -139,7 +139,7 @@ const Testimonials = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentTestimonial(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
+                    className={`w-3 h-3 rounded-full ${
                       index === currentTestimonial ? 'bg-blue-600' : 'bg-gray-300'
                     }`}
                   />
@@ -148,7 +148,7 @@ const Testimonials = () => {
 
               <button
                 onClick={nextTestimonial}
-                className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+                className="p-2 rounded-full bg-white shadow-md hover:shadow-lg"
               >
                 <ChevronRight className="w-6 h-6 text-gray-600" />
               </button>

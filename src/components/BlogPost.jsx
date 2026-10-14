@@ -1,35 +1,35 @@
 import React from 'react';
 import { ArrowLeft, Calendar, Clock, MessageCircle, Phone } from 'lucide-react';
+import { PHONE_HREF, waLink } from '../config/site';
 
-const BlogPost = ({ post, onBack }) => {
-  const whatsappNumber = "5521984619958";
+const BlogPost = ({ post }) => {
   const whatsappMessage = "Olá! Li o artigo no blog e gostaria de mais informações sobre os serviços.";
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = waLink(whatsappMessage);
 
   if (!post) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <article className="min-h-screen bg-gray-50 pt-24 pb-8">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Botão Voltar */}
-        <button
-          onClick={onBack}
-          className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 mb-8 transition-colors"
+        <a
+          href="/#blog"
+          className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 mb-8"
         >
           <ArrowLeft size={20} />
           <span>Voltar ao Blog</span>
-        </button>
+        </a>
 
         {/* Cabeçalho do Post */}
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
-          <div className="h-64 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-            <div className="text-blue-600 text-8xl font-bold opacity-20">
-              {post.id}
-            </div>
-          </div>
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full h-64 object-cover"
+          />
           
           <div className="p-8">
-            <div className="flex items-center space-x-4 mb-4">
+            <div className="flex flex-wrap items-center gap-4 mb-4">
               <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
                 {post.category}
               </span>
@@ -74,14 +74,14 @@ const BlogPost = ({ post, onBack }) => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-colors inline-flex items-center justify-center space-x-2"
+              className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 inline-flex items-center justify-center space-x-2"
             >
               <MessageCircle size={20} />
               <span>Chamar no WhatsApp</span>
             </a>
             <a 
-              href="tel:21984619958"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center space-x-2"
+              href={PHONE_HREF}
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 inline-flex items-center justify-center space-x-2"
             >
               <Phone size={20} />
               <span>Ligar Agora</span>
@@ -89,7 +89,7 @@ const BlogPost = ({ post, onBack }) => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

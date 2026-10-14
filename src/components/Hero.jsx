@@ -1,14 +1,14 @@
 import React from 'react';
 import { MessageCircle, Phone, Clock } from 'lucide-react';
 import heroImage from '../assets/geladeira1.jpg';
+import { PHONE_HREF, waLink } from '../config/site';
 
 const Hero = () => {
-  const whatsappNumber = "5521984619958";
   const whatsappMessage = "Olá! Gostaria de agendar um serviço de assistência técnica.";
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = waLink(whatsappMessage);
 
   return (
-    <section id="inicio" className="bg-gradient-to-br from-blue-50 to-white pt-20 pb-16">
+    <section id="inicio" className="bg-gradient-to-br from-blue-50 to-white pt-28 pb-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Content */}
@@ -32,15 +32,15 @@ const Hero = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white px-8 py-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-green-600 transition-colors font-semibold text-lg"
+                className="bg-green-500 text-white px-8 py-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-green-600 font-semibold text-lg"
               >
                 <MessageCircle size={20} />
                 <span>Agende um Serviço</span>
               </a>
               
               <a 
-                href="tel:+5521984619958"
-                className="bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-700 transition-colors font-semibold text-lg"
+                href={PHONE_HREF}
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-700 font-semibold text-lg"
               >
                 <Phone size={20} />
                 <span>Ligar Agora</span>
@@ -73,7 +73,7 @@ const Hero = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   <span className="text-sm font-medium text-gray-700">Disponível agora</span>
                 </div>
               </div>

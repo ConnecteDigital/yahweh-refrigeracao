@@ -1,85 +1,54 @@
 import React, { useState } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import logo from '../assets/yahweh_refrigeracao_logo.png';
+import { PHONE_DISPLAY, PHONE_HREF } from '../config/site';
+
+const navItems = [
+  { href: '/#inicio', label: 'Início' },
+  { href: '/#sobre', label: 'Sobre' },
+  { href: '/#servicos', label: 'Serviços' },
+  { href: '/areas-atendidas', label: 'Áreas Atendidas' },
+  { href: '/#blog', label: 'Blog' },
+  { href: '/#contato', label: 'Contato' },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
 
   return (
     <header className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <button 
-              onClick={() => scrollToSection('inicio')}
-              className="hover:opacity-80 transition-opacity"
-            >
-              <img src={logo} alt="Yahweh Refrigeração" className="h-4 md:h-8 w-auto" />
-            </button>
-          </div>
+          <a href="/" className="flex items-center hover:opacity-80">
+            <img src={logo} alt="Yahweh Refrigeração" width="168" height="48" className="h-10 md:h-12 w-auto" />
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('inicio')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Início
-            </button>
-            <button 
-              onClick={() => scrollToSection('sobre')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Sobre
-            </button>
-            <button 
-              onClick={() => scrollToSection('servicos')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Serviços
-            </button>
-            <button 
-              onClick={() => scrollToSection('blog')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Blog
-            </button>
-            <button 
-              onClick={() => scrollToSection('contato')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Contato
-            </button>
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href} className="text-gray-700 hover:text-blue-600">
+                {item.label}
+              </a>
+            ))}
           </nav>
 
           {/* Phone Button */}
           <div className="hidden md:flex items-center">
             <a 
-              href="tel:21984619958" 
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors"
+              href={PHONE_HREF} 
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700"
             >
               <Phone size={18} />
-              <span>(21) 98461-9958</span>
+              <span>{PHONE_DISPLAY}</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            onClick={toggleMenu}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-gray-700 hover:text-blue-600"
+            aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -89,42 +58,22 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4 pt-4">
-              <button 
-                onClick={() => scrollToSection('inicio')}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-left"
-              >
-                Início
-              </button>
-              <button 
-                onClick={() => scrollToSection('sobre')}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-left"
-              >
-                Sobre
-              </button>
-              <button 
-                onClick={() => scrollToSection('servicos')}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-left"
-              >
-                Serviços
-              </button>
-              <button 
-                onClick={() => scrollToSection('blog')}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-left"
-              >
-                Blog
-              </button>
-              <button 
-                onClick={() => scrollToSection('contato')}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-left"
-              >
-                Contato
-              </button>
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-gray-700 hover:text-blue-600"
+                >
+                  {item.label}
+                </a>
+              ))}
               <a 
-                href="tel:+5521984619958" 
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors w-fit"
+                href={PHONE_HREF} 
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 w-fit"
               >
                 <Phone size={18} />
-                <span>(21) 98461-9958</span>
+                <span>{PHONE_DISPLAY}</span>
               </a>
             </nav>
           </div>
@@ -135,4 +84,3 @@ const Header = () => {
 };
 
 export default Header;
-
