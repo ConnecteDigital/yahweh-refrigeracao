@@ -9,12 +9,12 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
+      <div className="site-container py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <img src={logo} alt="Yahweh Refrigeração" className="h-12 w-auto" />
+              <img src={logo} alt="Yahweh Refrigeração" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               A Yahweh Refrigeração é especializada em assistência técnica de geladeiras, 

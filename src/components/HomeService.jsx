@@ -32,7 +32,7 @@ const HomeService = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Content */}
           <div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">

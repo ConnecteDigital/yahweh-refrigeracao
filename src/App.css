@@ -2,6 +2,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Identidade Yahweh: azul-marinho do logo nos títulos, azul da marca nas ações,
+   tom "gelo" nos fundos e verde do WhatsApp só para o botão de conversa. */
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-ink: #0b1f3a;
+  --color-brand: #1d5bd8;
+  --color-brand-dark: #1747ae;
+  --color-ice: #f2f7ff;
+  --color-ice-2: #dceaff;
+  --color-zap: #16a34a;
+  --color-zap-dark: #12813b;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -136,10 +149,21 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Garantir que nenhum elemento ultrapasse a largura da tela */
-.container {
-  max-width: 100%;
-  overflow-x: clip;
+/* Largura padrão do conteúdo em todas as seções: centralizado e sem esticar
+   em telas grandes (antes ".container { max-width: 100% }" fazia o conteúdo
+   ocupar a tela inteira no PC). */
+@layer components {
+  .site-container {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .site-container {
+      padding-inline: 1.5rem;
+    }
+  }
 }
 
 /* Correção específica para elementos que podem causar overflow */

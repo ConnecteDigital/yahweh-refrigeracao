@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="bg-gradient-to-br from-blue-50 to-white pt-28 pb-16">
-      <div className="container mx-auto px-4">
+      <div className="site-container">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Content */}
           <div className="lg:w-1/2 mb-8 lg:mb-0">
