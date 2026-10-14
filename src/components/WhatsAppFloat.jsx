@@ -1,29 +1,34 @@
 import React from 'react';
-import whatsappIcon from '../assets/whatsapp_icon.png';
-import { waLink } from '../config/site';
+import { Phone } from 'lucide-react';
+import WhatsAppIcon from './icons/WhatsAppIcon';
+import { PHONE_DISPLAY, PHONE_HREF, waLink } from '../config/site';
 
-const WhatsAppFloat = () => {
-  const whatsappMessage = "Olá! Vim pelo site e gostaria de mais informações sobre os serviços da Yahweh Refrigeração.";
-  const whatsappUrl = waLink(whatsappMessage);
+const whatsappUrl = waLink('Olá! Vim pelo site e gostaria de mais informações sobre os serviços da Yahweh Refrigeração.');
 
-  const handleClick = () => {
-    window.open(whatsappUrl, '_blank');
-  };
-
-  return (
-    <button
-      onClick={handleClick}
-      className="fixed bottom-6 right-6 z-40 hidden rounded-full bg-zap p-4 text-white shadow-lg hover:bg-zap-dark hover:shadow-xl lg:block"
-      aria-label="Falar no WhatsApp"
+// Botões flutuantes pequenos: ligar no canto esquerdo e WhatsApp no direito.
+const WhatsAppFloat = () => (
+  <>
+    <a
+      href={PHONE_HREF}
+      aria-label={`Ligar para ${PHONE_DISPLAY}`}
+      title="Ligar agora"
+      className="fixed bottom-5 left-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-ink/20 hover:bg-brand-dark"
+      style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
     >
-      <img 
-        src={whatsappIcon} 
-        alt="WhatsApp" 
-        className="w-6 h-6 filter brightness-0 invert"
-      />
-    </button>
-  );
-};
+      <Phone className="h-5 w-5" aria-hidden="true" />
+    </a>
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar no WhatsApp"
+      title="Falar no WhatsApp"
+      className="fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg shadow-ink/20 hover:brightness-95"
+      style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
+    >
+      <WhatsAppIcon className="h-6 w-6" />
+    </a>
+  </>
+);
 
 export default WhatsAppFloat;
-
