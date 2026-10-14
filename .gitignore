@@ -68,7 +68,6 @@ jspm_packages/
 
 # Gatsby files
 .cache/
-public
 
 # Storybook build outputs
 .out
@@ -93,3 +92,4 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+dist-ssr/

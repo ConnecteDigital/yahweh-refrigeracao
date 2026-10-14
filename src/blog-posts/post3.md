@@ -119,5 +119,5 @@ A Yahweh Refrigeração oferece serviços completos de manutenção e instalaç�
 
 ---
 
-*Quer reduzir sua conta de luz com manutenção profissional do seu ar condicionado? Entre em contato com a Yahweh Refrigeração pelo WhatsApp (21) 98461-9958. Oferecemos manutenção preventiva e corretiva 24 horas por dia!*
+*Quer reduzir sua conta de luz com manutenção profissional do seu ar condicionado? Entre em contato com a Yahweh Refrigeração pelo WhatsApp (21) 96769-0097. Oferecemos manutenção preventiva e corretiva 24 horas por dia!*
 

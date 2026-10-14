@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -120,25 +119,10 @@
 }
 
 
-/* Animação customizada para carrossel de marcas */
-@keyframes scroll-brands {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Compensa o header fixo ao navegar por âncoras (#servicos, #contato...) */
+section[id] {
+  scroll-margin-top: 80px;
 }
-
-.animate-scroll-brands {
-  animation: scroll-brands 2s linear infinite;
-}
-
-/* Pausar animação ao hover */
-.animate-scroll-brands:hover {
-  animation-play-state: paused;
-}
-
 
 /* Prevenir rolagem horizontal no mobile */
 html, body {
@@ -162,9 +146,12 @@ section {
   overflow-x: hidden;
 }
 
-/* Garantir que imagens não ultrapassem o container */
-img {
-  max-width: 100%;
-  height: auto;
+/* Garantir que imagens não ultrapassem o container (em @layer base para que
+   classes de altura do Tailwind, como h-10 no logo, continuem valendo) */
+@layer base {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 

@@ -3,11 +3,11 @@ import { CheckCircle, MessageCircle } from 'lucide-react';
 import geladeiraImg from '../assets/geladeira2.jpg';
 import maquinaLavarImg from '../assets/maquina_lavar_nova_2.png';
 import arCondicionadoImg from '../assets/ar_condicionado1.jpg';
+import { waLink } from '../config/site';
 
 const Services = () => {
-  const whatsappNumber = "5521984619958";
   const whatsappMessage = "Olá! Gostaria de solicitar um orçamento para serviço de assistência técnica.";
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = waLink(whatsappMessage);
 
   const services = [
     {
@@ -58,12 +58,12 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl">
               <div className="h-48 overflow-hidden">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
               </div>
               
@@ -89,7 +89,7 @@ const Services = () => {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-700 transition-colors font-semibold"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-700 font-semibold"
                 >
                   <MessageCircle size={18} />
                   <span>Solicitar Orçamento</span>
