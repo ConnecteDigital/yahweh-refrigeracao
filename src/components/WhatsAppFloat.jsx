@@ -13,7 +13,7 @@ const WhatsAppFloat = () => {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl"
+      className="fixed bottom-6 right-6 z-40 hidden rounded-full bg-zap p-4 text-white shadow-lg hover:bg-zap-dark hover:shadow-xl lg:block"
       aria-label="Falar no WhatsApp"
     >
       <img 

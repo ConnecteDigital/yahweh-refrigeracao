@@ -136,3 +136,16 @@ export const bairrosVizinhos = (bairro, limite = 12) => {
   return Array.from({ length: Math.min(limite, regiao.length - 1) }, (_, i) =>
     regiao[(inicio + 1 + i) % regiao.length]);
 };
+
+// Busca por nome de bairro/cidade ignorando acentos e maiúsculas
+// ("icarai" encontra "Icaraí"). Nomes que começam com o termo vêm primeiro.
+const normalizar = (texto) => texto.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+export const buscarBairros = (termo, limite = 8) => {
+  const busca = normalizar(termo.trim());
+  if (!busca) return [];
+  return bairros
+    .filter((bairro) => normalizar(`${bairro.nome} ${bairro.cidade}`).includes(busca))
+    .sort((a, b) => Number(!normalizar(a.nome).startsWith(busca)) - Number(!normalizar(b.nome).startsWith(busca)))
+    .slice(0, limite);
+};
