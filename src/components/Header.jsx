@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, MessageCircle, Phone, Menu, X } from 'lucide-react';
+import { ChevronDown, Phone, Menu, X } from 'lucide-react';
 import logo from '../assets/yahweh_refrigeracao_logo.png';
 import { PHONE_DISPLAY, PHONE_HREF, waLink } from '../config/site';
 import { bairrosPorRegiao, slugify } from '../data/bairros';
 import BuscaBairro from './nav/BuscaBairro';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 
 const navAntes = [
   { href: '/#inicio', label: 'Início' },
@@ -256,7 +257,7 @@ const Header = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-zap px-5 py-2.5 text-[15px] font-bold text-white hover:bg-zap-dark"
           >
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            <WhatsAppIcon className="h-[18px] w-[18px]" />
             Agendar
           </a>
         </div>
@@ -267,9 +268,9 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chamar no WhatsApp"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-zap text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-whatsapp text-white"
           >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            <WhatsAppIcon className="h-5 w-5" />
           </a>
           <button
             type="button"
@@ -325,7 +326,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-xl bg-zap py-3.5 font-bold text-white"
             >
-              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              <WhatsAppIcon className="h-5 w-5" />
               WhatsApp
             </a>
           </div>
