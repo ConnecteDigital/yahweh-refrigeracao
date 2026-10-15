@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "rea": {
+      "command": "npx",
+      "args": ["-y", "rea-agents@6.5.0", "mcp"],
+      "env": {
+        "REA_TSHARK_COMMAND": "/usr/bin/tshark",
+        "REA_SIGROK_COMMAND": "/usr/bin/sigrok-cli",
+        "REA_PWNTOOLS_PYTHON": "/opt/rea/pwntools/bin/python",
+        "REA_UNBLOB_COMMAND": "/opt/rea/unblob/bin/unblob",
+        "REA_BINWALK_COMMAND": "/opt/rea/binwalk/bin/binwalk"
+      }
+    }
+  }
+}
