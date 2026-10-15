@@ -74,6 +74,7 @@ export const posts = [
     readTime: "6 min de leitura",
     category: "Economia",
     slug: "economizar-energia-ar-condicionado",
+    foto: fotos.arCondicionado,
     content: (
       <div>
         <p>O ar condicionado pode representar até 40% da conta de energia. Veja como economizar sem perder o conforto:</p>

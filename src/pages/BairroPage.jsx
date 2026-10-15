@@ -6,7 +6,6 @@ import { bairrosVizinhos } from '../data/bairros';
 import { bairroFaqs } from '../data/bairroFaqs';
 import { PHONE_DISPLAY, PHONE_HREF, waLink } from '../config/site';
 import SectionHeading from '../components/SectionHeading';
-import IlustracaoAr from '../components/IlustracaoAr';
 import { fotos } from '../data/fotos';
 
 // Escolhe sempre a mesma variação de texto para o mesmo bairro, para que
@@ -54,6 +53,7 @@ const servicos = (b) => [
     itens: ['Troca de bomba de drenagem', 'Reparo de motor e câmbio', 'Troca de válvula de entrada', 'Ajuste de suspensão'],
   },
   {
+    foto: fotos.arCondicionado,
     title: `Ar condicionado em ${b.nome}`,
     text: 'Split, inverter e janela.',
     itens: ['Instalação profissional', 'Higienização completa', 'Recarga de gás', 'Manutenção preventiva'],
@@ -158,18 +158,14 @@ const BairroPage = ({ bairro }) => {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {servicos(bairro).map((servico) => (
               <article key={servico.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-                {servico.foto ? (
-                  <img
-                    src={servico.foto.src}
-                    alt={servico.foto.alt}
-                    style={{ objectPosition: servico.foto.posicao }}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-44 w-full object-cover"
-                  />
-                ) : (
-                  <IlustracaoAr className="h-44" />
-                )}
+                <img
+                  src={servico.foto.src}
+                  alt={servico.foto.alt}
+                  style={{ objectPosition: servico.foto.posicao }}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-44 w-full object-cover"
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-bold leading-snug text-ink">{servico.title}</h3>
                   <p className="mt-1 text-slate-600">{servico.text}</p>

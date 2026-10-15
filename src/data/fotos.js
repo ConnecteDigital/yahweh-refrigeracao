@@ -5,6 +5,7 @@ import abrindoGeladeira from '../assets/fotos/tecnico-abrindo-geladeira-inox.web
 import diagnosticoGeladeira from '../assets/fotos/tecnico-diagnostico-geladeira-multimetro.webp';
 import maquinaDeLavar from '../assets/fotos/tecnico-conserto-maquina-de-lavar.webp';
 import atendimentoCliente from '../assets/fotos/tecnico-atendimento-cliente-geladeira.webp';
+import arCondicionado from '../assets/fotos/tecnico-medicao-ar-condicionado-split.webp';
 
 export const fotos = {
   abrindoGeladeira: {
@@ -20,11 +21,16 @@ export const fotos = {
   maquinaDeLavar: {
     src: maquinaDeLavar,
     alt: 'Técnico da Yahweh Refrigeração consertando máquina de lavar Electrolux',
-    posicao: '50% 55%',
+    posicao: '50% 82%',
   },
   atendimentoCliente: {
     src: atendimentoCliente,
     alt: 'Técnico da Yahweh Refrigeração atendendo cliente e testando o painel da geladeira',
     posicao: '50% 62%',
+  },
+  arCondicionado: {
+    src: arCondicionado,
+    alt: 'Técnico da Yahweh Refrigeração medindo com multímetro um ar condicionado split',
+    posicao: '50% 35%',
   },
 };
