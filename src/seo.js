@@ -94,7 +94,7 @@ export const getSeo = (path) => {
       title: `${post.title} | Yahweh Refrigeração`,
       description: post.excerpt,
       path,
-      image: post.foto?.src,
+      image: post.foto.src,
       type: 'article',
       jsonLd: [
         {
@@ -103,7 +103,7 @@ export const getSeo = (path) => {
           headline: post.title,
           description: post.excerpt,
           datePublished: post.isoDate,
-          image: absolute(post.foto?.src || heroImage),
+          image: absolute(post.foto.src),
           inLanguage: 'pt-BR',
           mainEntityOfPage: absolute(path),
           author: { '@id': `${SITE_URL}/#empresa` },

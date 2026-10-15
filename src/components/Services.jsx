@@ -1,7 +1,6 @@
 import React from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { fotos } from '../data/fotos';
-import IlustracaoAr from './IlustracaoAr';
 import { waLink } from '../config/site';
 
 const Services = () => {
@@ -31,6 +30,7 @@ const Services = () => {
       ]
     },
     {
+      foto: fotos.arCondicionado,
       title: "Ar Condicionado",
       description: "Instalação, manutenção e reparo de ar condicionado split e janela.",
       benefits: [
@@ -58,18 +58,14 @@ const Services = () => {
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl">
               <div className="h-48 overflow-hidden">
-                {service.foto ? (
-                  <img 
-                    src={service.foto.src} 
-                    alt={service.foto.alt}
-                    style={{ objectPosition: service.foto.posicao }}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <IlustracaoAr className="h-full" />
-                )}
+                <img 
+                  src={service.foto.src} 
+                  alt={service.foto.alt}
+                  style={{ objectPosition: service.foto.posicao }}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               <div className="p-6">
