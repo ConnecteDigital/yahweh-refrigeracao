@@ -79,9 +79,9 @@ const HomeService = () => {
           <div className="lg:w-1/2">
             <div className="relative">
               <img 
-                src={fotos.diagnosticoGeladeira.src}
-                alt={fotos.diagnosticoGeladeira.alt}
-                style={{ objectPosition: fotos.diagnosticoGeladeira.posicao }}
+                src={fotos.multimetroMidea.src}
+                alt={fotos.multimetroMidea.alt}
+                style={{ objectPosition: fotos.multimetroMidea.posicao }}
                 width="900"
                 height="1200"
                 loading="lazy"

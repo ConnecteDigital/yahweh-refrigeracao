@@ -9,7 +9,7 @@ const Services = () => {
 
   const services = [
     {
-      foto: fotos.diagnosticoGeladeira,
+      foto: fotos.geladeiraSideBySide,
       title: "Reparo de Geladeiras",
       description: "Diagnosticamos e consertamos todos os tipos de geladeiras: frost free, inverter e side by side com rapidez e eficiência.",
       benefits: [
