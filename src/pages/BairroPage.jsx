@@ -47,7 +47,7 @@ const servicos = (b) => [
     itens: ['Troca de termostato e sensores', 'Recarga de gás', 'Troca de borracha de vedação', 'Reparo de placa eletrônica'],
   },
   {
-    foto: fotos.maquinaDeLavar,
+    foto: fotos.multimetroMaquinaDeLavar,
     title: `Conserto de máquina de lavar em ${b.nome}`,
     text: 'Lavadoras e lava e seca de todas as marcas.',
     itens: ['Troca de bomba de drenagem', 'Reparo de motor e câmbio', 'Troca de válvula de entrada', 'Ajuste de suspensão'],

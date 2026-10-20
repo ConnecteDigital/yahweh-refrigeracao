@@ -40,7 +40,7 @@ export const posts = [
     isoDate: "2024-01-08",
     readTime: "7 min de leitura",
     category: "Diagnóstico",
-    foto: fotos.maquinaDeLavar,
+    foto: fotos.multimetroMaquinaDeLavar,
     slug: "problemas-maquina-lavar",
     content: (
       <div>
