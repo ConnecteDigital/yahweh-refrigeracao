@@ -19,7 +19,7 @@ const Services = () => {
       ]
     },
     {
-      foto: fotos.maquinaDeLavar,
+      foto: fotos.lavaESecaMidea,
       title: "Máquinas de Lavar",
       description: "Especialistas em manutenção e reparo de máquinas de lavar de todas as marcas.",
       benefits: [
