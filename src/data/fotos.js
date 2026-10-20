@@ -6,6 +6,8 @@ import diagnosticoGeladeira from '../assets/fotos/tecnico-diagnostico-geladeira-
 import maquinaDeLavar from '../assets/fotos/tecnico-conserto-maquina-de-lavar.webp';
 import atendimentoCliente from '../assets/fotos/tecnico-atendimento-cliente-geladeira.webp';
 import arCondicionado from '../assets/fotos/tecnico-medicao-ar-condicionado-split.webp';
+import geladeiraSideBySide from '../assets/fotos/tecnico-geladeira-side-by-side-lg.webp';
+import multimetroMidea from '../assets/fotos/tecnico-multimetro-geladeira-midea.webp';
 
 export const fotos = {
   abrindoGeladeira: {
@@ -31,6 +33,16 @@ export const fotos = {
   arCondicionado: {
     src: arCondicionado,
     alt: 'Técnico da Yahweh Refrigeração medindo com multímetro um ar condicionado split',
+    posicao: '50% 35%',
+  },
+  geladeiraSideBySide: {
+    src: geladeiraSideBySide,
+    alt: 'Técnico da Yahweh Refrigeração verificando geladeira side by side LG com dispenser de água',
+    posicao: '50% 40%',
+  },
+  multimetroMidea: {
+    src: multimetroMidea,
+    alt: 'Técnico da Yahweh Refrigeração medindo com multímetro geladeira inverse Midea',
     posicao: '50% 35%',
   },
 };

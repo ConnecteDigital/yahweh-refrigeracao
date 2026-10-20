@@ -41,7 +41,7 @@ const garantias = ['Atendimento em casa', 'Garantia de 90 dias', 'Peças origina
 
 const servicos = (b) => [
   {
-    foto: fotos.diagnosticoGeladeira,
+    foto: fotos.geladeiraSideBySide,
     title: `Conserto de geladeira em ${b.nome}`,
     text: 'Frost free, duplex, inverter e side by side.',
     itens: ['Troca de termostato e sensores', 'Recarga de gás', 'Troca de borracha de vedação', 'Reparo de placa eletrônica'],
